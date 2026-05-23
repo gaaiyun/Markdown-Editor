@@ -1,8 +1,45 @@
-# Markdown 编辑器 📝
+# Markdown-Editor
 
-一个功能齐全的实时预览 Markdown 编辑器，基于 Streamlit 构建。
+基于 Streamlit 的实时预览 Markdown 编辑器，配 LLM 写作助手与多格式导出。
 
-## ✨ 功能特性
+## v2 AI 写作助手
+
+5 个 LLM 命令，按文件操作或在 Streamlit 里点按钮：
+
+```bash
+# 校对（修语法/拼写/标点，保 Markdown 结构）
+python __main__.py proofread draft.md -o cleaned.md
+
+# 按语气改写（formal/casual/academic/concise/friendly/professional）
+python __main__.py rewrite draft.md --tone academic -o academic.md
+
+# ≤ 3 句话摘要
+python __main__.py summarize long_article.md
+
+# 翻译（保留 Markdown 标记）
+python __main__.py translate cn_post.md --to English -o en_post.md
+
+# 基于大纲扩写
+python __main__.py expand outline.md -o full_article.md
+
+# 导出 HTML/PDF/DOCX
+python __main__.py export article.md --format pdf
+```
+
+LLM 三 backend（openai / anthropic / deepseek），默认 deepseek。配 `DEEPSEEK_API_KEY` / `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` 任一即可。
+
+库调用：
+
+```python
+from ai_assistant import AIAssistant, LLMClient
+
+ai = AIAssistant(LLMClient(backend="deepseek"))
+result = ai.proofread(markdown_text)
+result = ai.translate(markdown_text, target_lang="English")
+result = ai.rewrite(markdown_text, tone="academic")
+```
+
+## v1 基础功能（仍保留）
 
 - **实时预览**：编辑 Markdown 时立即看到渲染效果
 - **语法高亮**：支持代码块的语法高亮显示
