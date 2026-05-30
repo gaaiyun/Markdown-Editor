@@ -84,15 +84,15 @@ def cmd_expand(args) -> int:
 def cmd_export(args) -> int:
     from exporter import MarkdownExporter
     text = _read_input(args.file)
-    exporter = MarkdownExporter()
+    exporter = MarkdownExporter(text)
     fmt = args.format
     out = args.output or args.file.replace(".md", f".{fmt}")
     if fmt == "html":
-        exporter.export_html(text, out)
+        exporter.export_html(out)
     elif fmt == "pdf":
-        exporter.export_pdf(text, out)
+        exporter.export_pdf(out)
     elif fmt == "docx":
-        exporter.export_docx(text, out)
+        exporter.export_word(out)
     else:
         sys.stderr.write(f"[error] 不支持的格式 {fmt}\n")
         return 1

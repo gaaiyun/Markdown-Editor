@@ -50,7 +50,7 @@ result = ai.rewrite(markdown_text, tone="academic")
 - **文件操作**：新建、打开、保存 Markdown 文件
 - **统计分析**：实时显示字符数、行数、字数统计
 
-## 🚀 快速开始
+## 快速开始
 
 ### 安装依赖
 
@@ -67,7 +67,7 @@ streamlit run dashboard.py
 
 浏览器会自动打开 http://localhost:8501
 
-## 📁 项目结构
+## 项目结构
 
 ```
 markdown-editor/
@@ -80,7 +80,7 @@ markdown-editor/
     └── test_editor.py   # 单元测试
 ```
 
-## 🎯 使用说明
+## 使用说明
 
 ### 编辑 Markdown
 
@@ -115,7 +115,7 @@ markdown-editor/
 - **github**：GitHub 风格
 - **paper**：纸张质感
 
-## 🧪 运行测试
+## 运行测试
 
 ```bash
 # 运行单元测试
@@ -128,7 +128,7 @@ pytest tests/test_editor.py -v --cov=. --cov-report=html
 # 打开 htmlcov/index.html
 ```
 
-## 📦 依赖说明
+## 依赖说明
 
 - **streamlit**：Web 应用框架
 - **markdown**：Markdown 解析
@@ -140,7 +140,7 @@ pytest tests/test_editor.py -v --cov=. --cov-report=html
 - **pytest**：测试框架
 - **pytest-cov**：测试覆盖率
 
-## ⚙️ 图床配置
+## 图床配置
 
 支持配置任意图床 API，常见选项：
 
@@ -159,7 +159,7 @@ API Key: 你的 API Token
 ### 自建图床
 按照图床 API 文档配置 URL 和密钥
 
-## 🎨 自定义
+## 自定义
 
 ### 添加新主题
 
@@ -185,7 +185,7 @@ def export_custom(self, output_path: str) -> str:
     pass
 ```
 
-## 📝 Markdown 语法支持
+## Markdown 语法支持
 
 支持标准 Markdown 语法及扩展：
 
@@ -199,23 +199,23 @@ def export_custom(self, output_path: str) -> str:
 - 分隔线
 - 任务列表
 
-## 🐛 已知问题
+## 已知问题
 
 - PDF 导出对复杂 Markdown 格式支持有限
 - 图片上传需要配置图床 API
 
-## 📄 许可证
+## 许可证
 
 MIT License
 
-## 🤝 贡献
+## 贡献
 
 欢迎提交 Issue 和 Pull Request！
 
-## 📧 联系方式
+## 联系方式
 
 如有问题或建议，请创建 Issue。
 
 ---
 
-**Made with ❤️ using Streamlit**
+基于 Streamlit 构建。
